@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation</title>
+    <title>Form with Logo</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -56,9 +56,20 @@
         .invalid-icon {
             color: #FF0000;
         }
+
+        /* Added logo styles */
+        .logo {
+            width: auto; /* Adjust the size as needed */
+            height: auto;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
     </style>
 </head>
 <body>
+    <img src="/logo.png" alt="Company Logo" class="logo">
+    
     <form>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
