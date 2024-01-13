@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .validation-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .valid-icon {
+            color: #4CAF50;
+        }
+
+        .invalid-icon {
+            color: #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="email-validation" class="validation-icon"></span>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <!-- Add more fields as needed -->
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const emailInput = document.getElementById('email');
+        const emailValidationIcon = document.getElementById('email-validation');
+
+        emailInput.addEventListener('input', function () {
+            const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+
+            if (isValidEmail) {
+                emailValidationIcon.innerHTML = '✔️';
+                emailValidationIcon.className = 'validation-icon valid-icon';
+            } else {
+                emailValidationIcon.innerHTML = '✘';
+                emailValidationIcon.className = 'validation-icon invalid-icon';
+            }
+        });
+    </script>
+</body>
+</html>
