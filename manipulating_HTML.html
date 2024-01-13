@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Manipulation</title>
+    <style>
+         .highlight {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -13,6 +18,8 @@
         <input type="button" onclick="changeHTML()" value="Change HTML">
         <input type="button" onclick="changeAttribute()" value="Change Attribute">
         <input type="button" onclick="removeAttributes()" value="Remove Attribute" >
+        <input type="button" onclick="addClass()" value="Add Class" >
+        <input type="button" onclick="toggleClass()" value="Toggling" >
     </div>
     <script>
 function changeText(){
@@ -27,7 +34,12 @@ function changeAttribute(){
 function removeAttributes() {
     document.getElementById("textContentExample").removeAttribute('style');
 }
-
+function addClass(){
+    document.getElementById("textContentExample").classList.add("highlight")
+}
+function toggleClass(){
+    document.getElementById("textContentExample").classList.toggle("highlight")
+}
 
 
     </script>
