@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboCounter</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color:black;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            opacity: 1.2;
+        }
+
+        div {
+            background-color: lightblue; /* semi-transparent background for better text visibility */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            opacity: 0.8;
+        }
+
+        #input {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #count {
+            background-color: #4CAF50;
+            color:black;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #count:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="input">Count: 0</div>
+        <input type="button" value="Counter" id="count">
+    </div>
+    <script>
+        let btn = document.getElementById("count");
+        let counter = 0;
+
+        btn.addEventListener('click', () => {
+            let input = document.getElementById("input");
+            input.innerHTML = `Count: ${++counter}`;
+        });
+    </script>
+</body>
+</html>
