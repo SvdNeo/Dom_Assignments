@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div>
+        <h1 id="h1">Hello Am manipulating the H1 tag using DOM methods</h1>
+        <p id="textContentExample">This is the initial text content.</p>
+        <input type="button" onclick="changeText()" value="Change">
+        <input type="button" onclick="changeHTML()" value="Change HTML">
+        <input type="button" onclick="changeAttribute()" value="Change Attribute">
+        <input type="button" onclick="removeAttributes()" value="Remove Attribute" >
+    </div>
+    <script>
+function changeText(){
+    document.getElementById("textContentExample").textContent = "This is Changed Text"
+}
+function changeHTML(){
+    document.getElementById("h1").innerHTML = "<h2> I have manipulated the document </h2>"
+}
+function changeAttribute(){
+    document.getElementById("textContentExample").setAttribute('style','background-color:blue;',"color:brown;")
+}
+function removeAttributes() {
+    document.getElementById("textContentExample").removeAttribute('style');
+}
+
+
+
+    </script>
+</body>
+</html>
