@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color:#40E0D0;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+        <ul id="navList">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            var navList = document.getElementById("navList");
+            navList.style.display = (navList.style.display === 'none' || navList.style.display === '') ? 'flex' : 'none';
+        }
+    </script>
+</body>
+</html>
