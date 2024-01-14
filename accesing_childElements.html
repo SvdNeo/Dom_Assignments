@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing ChildElements</title>
+</head>
+<body>
+    <div id="parentId">
+        <p>First Child</p>
+        <p>Second Child</p>
+      </div>
+      <script>
+        let parentEle = document.getElementById("parentId");
+      
+        // Accessing and logging the text content of the first child
+        let firstChild = parentEle.firstElementChild;
+        console.log(firstChild.textContent);
+      
+        // Writing the text content of the first child to the document
+        document.write(firstChild.textContent);
+      
+        // Creating a new paragraph element for the third child
+        let third = document.createElement("p");
+        third.textContent = "Third Child"; // Corrected this line, removed the unnecessary <p> tags
+      
+        // Appending the new third child to the parent element
+        parentEle.appendChild(third); // Corrected this line, changed 'add' to 'appendChild'
+      </script
+</body>
+</html>
