@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert Items into a List</title>
+</head>
+<body>
+
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ul>
+
+  <script>
+    // Get the unordered list element
+    let myList = document.getElementById("myList");
+
+    // Insert new items using insertAdjacentHTML
+    myList.insertAdjacentHTML('afterbegin', '<li>New Item 1</li>'); // Insert at the beginning
+    myList.children[4].insertAdjacentHTML('beforebegin', '<li>New Item 2</li>');   // Insert after "Item 3"
+    myList.insertAdjacentHTML('beforeend', '<li>New Item 3</li>');   // Append at the end
+    myList.insertAdjacentHTML('beforeend', '<li>New Item 4</li>');   // Insert after "Item 3"
+    myList.insertAdjacentHTML('beforeend', '<li>New Item 5</li>');   // Insert after "Item 4"
+   myList.children[1].insertAdjacentHTML('afterend', '<li>New Item 1.5</li>'); // Insert after "Item 1"
+    //myList.children[2].insertAdjacentHTML('beforebegin', '<li>New Item 2.5</li>'); // Insert before "Item 3"
+    console.log( myList.children[0])
+
+    // Print information about each child node
+    for (let i = 0; i < myList.childNodes.length; i++) {
+      let childNode = myList.childNodes[i];
+
+      // Check if the node is an element node (type 1)
+      if (childNode.nodeType === 1) {
+        console.log("Position:", i + 1, "Element Node:", childNode.nodeName, "Content:", childNode.textContent.trim());
+      } else if (childNode.nodeType === 3 && childNode.nodeValue.trim() !== "") {
+        // Check if the node is a non-empty text node (type 3)
+        console.log("Position:", i + 1, "Text Node:", childNode.nodeValue.trim());
+      }
+    }
+  </script>
+</body>
+</html>
