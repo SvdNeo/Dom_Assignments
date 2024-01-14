@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulate Child by Class Name</title>
+  <style>
+    .targetClass {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="parentContainer">
+    <p class="targetClass">Target Child</p>
+    <p>Other Child</p>
+    <p class="targetClass">Another Target Child</p>
+  </div>
+
+  <script>
+    // Get the parent element
+    let parentElement = document.getElementById("parentContainer");
+
+    // Find and return the first child element with a specific class name
+    let targetChild = parentElement.querySelector('.targetClass');
+
+    // Check if a matching element was found
+    if (targetChild) {
+      // Manipulate the content
+      targetChild.textContent = "Modified Target Child";
+
+      // Manipulate the style
+      targetChild.style.backgroundColor = 'yellow';
+    } else {
+      console.log("No matching element found.");
+    }
+  </script>
+</body>
+</html>
