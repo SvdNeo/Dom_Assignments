@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterating siblings</title>
+</head>
+<body>
+    <div id="container">
+        <p id="currentId">Current Element</p>
+        <p>First Sibling</p>
+        <p>Second Sibling</p>
+      </div>
+      <div id="output"></div>
+      <script>
+        let currentEle = document.getElementById("currentId")
+        let sibling = currentEle.nextElementSibling;
+        let container = document.getElementById("output")
+        while(sibling){
+            let para = document.createElement("p")
+            para.textContent = sibling.textContent;
+            container.append(para)
+            sibling = sibling.nextElementSibling;
+        }
+      </script>
+</body>
+</html>

@@ -21,12 +21,12 @@
     // Insert new items using insertAdjacentHTML
     myList.insertAdjacentHTML('afterbegin', '<li>New Item 1</li>'); // Insert at the beginning
     myList.children[4].insertAdjacentHTML('beforebegin', '<li>New Item 2</li>');   // Insert after "Item 3"
-    myList.insertAdjacentHTML('beforeend', '<li>New Item 3</li>');   // Append at the end
+   myList.children[4].insertAdjacentHTML('beforeend', '<li>New Item 3</li>');   // Append at the end
     myList.insertAdjacentHTML('beforeend', '<li>New Item 4</li>');   // Insert after "Item 3"
-    myList.insertAdjacentHTML('beforeend', '<li>New Item 5</li>');   // Insert after "Item 4"
+   myList.insertAdjacentHTML('beforeend', '<li>New Item 5</li>');   // Insert after "Item 4"
    myList.children[1].insertAdjacentHTML('afterend', '<li>New Item 1.5</li>'); // Insert after "Item 1"
-    //myList.children[2].insertAdjacentHTML('beforebegin', '<li>New Item 2.5</li>'); // Insert before "Item 3"
-    console.log( myList.children[0])
+  myList.children[2].insertAdjacentHTML('beforebegin', '<li>New Item 2.5</li>'); // Insert before "Item 3"
+  console.log( myList.children[0])
 
     // Print information about each child node
     for (let i = 0; i < myList.childNodes.length; i++) {
