@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Sibling Elements</title>
+</head>
+<body>
+
+  <div id="container">
+    <p id="firstSibling">First Sibling</p>
+    <p id="targetElement">Target Element</p>
+    <p id="lastSibling">Last Sibling</p>
+  </div>
+
+  <script>
+    // Get the target element
+    let targetElement = document.getElementById("targetElement");
+
+    // Access the next sibling element
+    let nextSibling = targetElement.nextElementSibling;
+
+    // Access the previous sibling element
+    let previousSibling = targetElement.previousElementSibling;
+
+    // Check if next sibling exists and manipulate it
+    if (nextSibling) {
+      nextSibling.textContent = "Modified Next Sibling";
+    }
+
+    // Check if previous sibling exists and manipulate it
+    if (previousSibling) {
+      previousSibling.style.color = "red";
+    }
+
+    // Log information about the target and its siblings
+    console.log("Target Element:", targetElement.textContent);
+    console.log("Next Sibling:", nextSibling ? nextSibling.textContent : "No next sibling");
+    console.log("Previous Sibling:", previousSibling ? previousSibling.textContent : "No previous sibling");
+  </script>
+</body>
+</html>
