@@ -43,7 +43,37 @@
             <p>This is the modal content.</p>
         </div>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const openModalBtn = document.getElementById('openModalBtn');
+    const modalContainer = document.getElementById('modalContainer');
+    const closeModalBtn = document.getElementById('closeModalBtn');
 
+    // Function to open the modal
+    function openModal() {
+        modalContainer.style.display = 'block';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        modalContainer.style.display = 'none';
+    }
+
+    // Event listener for the "Open Modal" button
+    openModalBtn.addEventListener('click', openModal);
+
+    // Event listener for the "Close" button inside the modal
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Event listener to close the modal when clicking outside of it
+    window.addEventListener('click', function (event) {
+        if (event.target === modalContainer) {
+            closeModal();
+        }
+    });
+});
+
+</script>
  
 </body>
 </html>
