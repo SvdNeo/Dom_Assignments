@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamically Create Elements</title>
+<style>
+    /* CSS styles for demonstration */
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 10px;
+        display: inline-block;
+        text-align: center;
+        line-height: 100px;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <!-- Existing content will be appended dynamically -->
+    </div>
+
+    <script>
+        // JavaScript code to dynamically create elements and append them to the DOM
+        document.addEventListener("DOMContentLoaded", function() {
+            // Create a new div element
+            var newDiv = document.createElement("div");
+            
+            // Set attributes and content for the new div
+            newDiv.setAttribute("class", "box");
+            newDiv.textContent = "New Box";
+
+            // Append the new div to an existing container element
+            var container = document.getElementById("container");
+            container.appendChild(newDiv);
+        });
+    </script>
+</body>
+</html>
